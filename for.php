@@ -12,6 +12,15 @@ fwrite(STDOUT,"I need a number to iterate by\n");
 
 $userIter = trim(fgets(STDIN));
 
-for ($userIter = $userLow; $userIter <= $userHigh; $userIter +=1 ){
+if (!is_numeric($userLow) || !is_numeric($userHigh) || !is_numeric($userIter)){
+	echo "Inputs are not correct!!";
+	die;
+}
+
+if ($userIter == ""){
+	$userIter = 1;
+}
+
+for ($i = $userLow; $i <= $userHigh; $i += $userIter ){
 	echo "$i\n";
 }
