@@ -1,7 +1,8 @@
 <?php 
 
 $books = array(
-    'The Hobbit' => array(
+    'The Hobbit' => 
+        array(
         'published' => 1937,
         'author' => 'J. R. R. Tolkien',
         'pages' => 310
@@ -23,6 +24,14 @@ $books = array(
     )
 );
 
-foreach ($books as $book){
-    
+//completed and Bonuses
+
+foreach ($books as $key => $book){
+
+    if ($book["published"] > 1950 && $book["pages"] < 300){
+        echo "$key\n";
+        foreach($book as $key2 => $value){
+                echo "$key2 === $value\n";  
+        }
+    }
 }
