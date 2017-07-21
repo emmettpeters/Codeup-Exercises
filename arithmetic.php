@@ -1,31 +1,54 @@
 <?php
 
 $a=15;
-4b=22;
+$b=22;
 
 function add($a, $b)
 {
-    return $a + $b;
+	if (is_numeric($a) && is_numeric($b)){
+    	return $a + $b;
+    } else{
+    	return "I need numbers dood!/n";
+    }
 }
 
 function subtract($a, $b)
 {
-    return $a - $b;
+    if (is_numeric($a) && is_numeric($b)){
+    	return $a - $b;
+    } else{
+    	return "I need numbers dood!/n";
+    }
 }
 
 function multiply($a, $b)
 {
-    return $a * $b;
+    if (is_numeric($a) && is_numeric($b)){
+    	return $a * $b;
+    } else{
+    	return "I need numbers dood!/n";
+    }
 }
 
-function divide($a, $b)
-{
-    return $a / $b;
+function divide($a, $b){
+	if ($b != 0){
+	    if (is_numeric($a) && is_numeric($b)){
+	    	return $a / $b;
+	    } else {
+	    	return "I need numbers dood!/n";
+	    }
+	} else {
+		echo "cant divide by 0 FOOL!\n";
+	}
 }
 
 function modulus($a, $b)
 {
-    return $a % $b;
+    if (is_numeric($a) && is_numeric($b)){
+    	return $a % $b;
+    } else{
+    	return "I need numbers dood!/n";
+    }
 }
 
 $adding = add(3,6);
@@ -34,7 +57,7 @@ $subtracting = subtract(4,2);
 echo "$subtracting\n";
 $multiplying = multiply(4,2);
 echo "$multiplying\n";
-$divideing = divide(4,2);
+$divideing = divide(4,0);
 echo "$divideing\n";
 $modulusing = modulus(4,2);
 echo "$modulusing\n";
