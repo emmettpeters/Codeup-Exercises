@@ -21,3 +21,21 @@ foreach ($testArray as $testElem) {
 	}
 
 }
+
+
+//extra
+
+$result = 63;
+$array = ["skeleton",45.18,[1,3,4,6],{value:-210}, false,"88.22222222"];
+
+foreach ($array as $elem){
+	if (is_string($elem)){
+		 echo $elem . "is a string bruh";
+	}
+
+	if (!is_string($elem)){
+		$elem . "is Not string bruh";
+	}
+
+
+}
