@@ -51,8 +51,7 @@ function combineArrays($array1, $array2){
 		if(nameInArray($value, $array2)){
 			array_push($newArray, $array1[$key]);
 		} else {
-			array_push($newArray, $array1[$key]);
-			array_push($newArray, $array2[$key]);
+			array_push($newArray, $array1[$key], $array2[$key]);
 		}
 	}
 	return $newArray;
@@ -60,11 +59,26 @@ function combineArrays($array1, $array2){
 
 $newArray = combineArrays($names,$compare);
 
-;
-
 echo "The new array is " . PHP_EOL; 
 print_r($newArray) . PHP_EOL;
 echo "!!!!\n";
+
+// JUSTIS WAY OF SOLVING
+
+// function combineArrays($array1, $array2){
+// 	$newArray = [];
+// 	foreach($array1 as $key => $value){
+// 		$array1Val = array_shift($array1);
+// 		$array2Val = array_shift($array2);
+
+// 		if($arrayVal1 === $arrayVal2){
+// 			array_push($newArray, $array1[$key]);
+// 		} else {
+// 			array_push($newArray, $array1[$key], $array2[$key]);
+// 		}
+// 	}
+// 	return $newArray;
+// }
 
 
 
