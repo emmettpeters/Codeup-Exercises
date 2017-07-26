@@ -3,13 +3,13 @@
 // test variable for even
 // test variable for even
 
-// function isEven($var){
-// 	if (is_numeric($var) && $var % 2 === 0){
-// 		return true;
-// 	} else {
-// 		return false;
-// 	}
-// }
+function isEven($var){
+	if (is_numeric($var) && $var % 2 === 0){
+		return true;
+	} else {
+		return false;
+	}
+}
 
 //test var for odd
 //test var for odd
