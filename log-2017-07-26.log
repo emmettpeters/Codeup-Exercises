@@ -1,0 +1,10 @@
+09:35:09 INFO This is an info message.
+09:36:15 INFO This is an info message.
+09:36:37 INFO This is an info message.
+09:36:37 ERROR This is an error message.
+10:02:36 Array This is an info message.
+10:02:36 Array ERROR
+10:03:00 Array This is an info message.
+10:03:00 Array This is an error message.
+10:03:33 [INFO] This is an info message.
+10:03:33 [ERROR] This is an error message.
