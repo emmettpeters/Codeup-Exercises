@@ -3,13 +3,13 @@
 // test variable for even
 // test variable for even
 
-function isEven($var){
-	if (is_numeric($var) && $var % 2 === 0){
-		return true;
-	} else {
-		return false;
-	}
-}
+// function isEven($var){
+// 	if (is_numeric($var) && $var % 2 === 0){
+// 		return true;
+// 	} else {
+// 		return false;
+// 	}
+// }
 
 //test var for odd
 //test var for odd
@@ -26,7 +26,7 @@ function isEven($var){
 // test for vowel
 
 // function isVowel($var){
-// 	if(is_string($var)){
+// 	if(is_string($var) && count($var) == 1){
 // 		$newVar = strtolower($var);
 // 		if ($newVar === "a" || $newVar === "e" || $newVar === "i" || $newVar === "o" || $newVar === "u"){
 // 			echo "I did it\n";
@@ -133,7 +133,7 @@ function isEven($var){
 // 	} else if (is_string($input)){
 // 		$trimmed = $input;
 // 		$strRan = str_shuffle($trimmed);
-// 		return  $strRan[count($strRan)];
+// 		return  $strRan[strlen($strRan)];
 // 	} else {
 // 		$response = "Not a string or an array";
 // 		echo $response;
@@ -141,8 +141,16 @@ function isEven($var){
 // 	}
 // }
 
-// $ans = random(false);
-// echo $ans . PHP_EOL;
+//function to write to any file
+//function to write to any file
+
+function append($filename,$stringToWrite){
+	$handle = fopen($filename, "a");
+	fwrite($handle,$stringToWrite);
+	fclose($handle);
+}
+
+
 
 
 
