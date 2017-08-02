@@ -51,8 +51,7 @@
 // 		$arrFirst = array_shift($input);
 // 		return $arrFirst;
 // 	} else if (is_string($input)){
-// 		$trimmed = $input;
-// 		$strFirst = $trimmed[0];
+// 		$strFirst = $input[0];
 // 		return  $strFirst;
 // 	} else {
 // 		$response = "Not a string or an array";
@@ -154,9 +153,43 @@ function append($filename,$stringToWrite){
 //function to make user input safe
 
 function safe($string){
-	return htmlspecialchars(strip_tags(string));
+	return htmlspecialchars(strip_tags($string));
 }
 
+//logout funciton for sessions
+
+function logout(){
+	session_unset();
+	session_regenerate_id(true);
+	session_destroy();
+	session_start();
+}
+
+//input key exists
+
+function inputHas($key){
+	return isset($_REQUEST[$key]);
+}
+
+//value at key
+
+function inputGet($key, $default =""){
+	if (inputHas($key)){
+		return $_REQUEST[$key];
+	} else {
+		return $default;
+	}
+}
+
+//escape hacker input
+
+function escape($input){
+	if(!is_string($input)){
+		return false;
+	} else {
+		return safe($string);
+	}
+}
 
 
 
