@@ -5,12 +5,10 @@ function parseContacts($filename)
     $contacts = array();
 
     // todo - read file and parse contacts
-
-    $filename = $filename;
+    
 	$handle = fopen($filename, 'r');
 	$contents = fread($handle, filesize($filename));
 	$contentsArray = explode("\n", $contents);
-	// print_r($contentsArray);
 	foreach($contentsArray as $key => $contact){
 
 		$contactArray = explode("|",$contact);

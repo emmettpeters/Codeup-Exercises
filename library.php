@@ -150,6 +150,13 @@ function append($filename,$stringToWrite){
 	fclose($handle);
 }
 
+//function to make user input safe
+//function to make user input safe
+
+function safe($string){
+	return htmlspecialchars(strip_tags(string));
+}
+
 
 
 
