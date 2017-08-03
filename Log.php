@@ -5,6 +5,7 @@ class Log
 	public $filename;
 
 	public function logMessage($logLevel,$message){
+		$this->filename = "log-" . date("Y-m-d") . ".log";
 		$message = date("h:i:s ") . "[$logLevel]". $message . PHP_EOL;
 		append($this->filename, $message);
 	}
