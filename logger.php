@@ -1,6 +1,5 @@
 	<?php
 
-
 	function append($filename,$stringToWrite)
 	{
 		$handle = fopen($filename, "a");
@@ -13,8 +12,7 @@
 	function logMessage($logLevel, $message)
 	{	
 		$filedate = "log-" . date("Y-m-d") . ".log";
-		$message = date("h:i:s ") . "[$logLevel] ". $message . PHP_EOL;
-		append($filedate, $message);
+		append($this->filename, $message);
 	};
 
 	function logError($message)
