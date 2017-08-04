@@ -1,13 +1,14 @@
 <?php
 
+require "library.php";
+
 class Log
 {
 	public $filename;
+	public $handle;
 
-	public function logMessage($logLevel,$message){
-		$this->filename = "log-" . date("Y-m-d") . ".log";
-		$message = date("h:i:s ") . "[$logLevel]". $message . PHP_EOL;
-		append($this->filename, $message);
+	public function __construct($prefix = "log"){
+		$this->filename = $prefix. "-" . date("Y-m-d") . ".log";
 	}
 
 	public function info($message){
@@ -16,5 +17,16 @@ class Log
 
 	public function error($message){
 		$this->logMessage("ERROR",$message);
+	}
+
+	public function logMessage($logLevel,$message){
+		$message = date("h:i:s ") . "[$logLevel]". $message . PHP_EOL;
+		$this->handle = fopen($this->filename, "a");
+		fwrite($this->handle,$message);
+		
+	} 
+
+	public function __destruct(){
+		fclose($this->handle);
 	}
 }
